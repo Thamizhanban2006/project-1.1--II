@@ -8,8 +8,11 @@
  */
 CHIP And {
 
-    IN  a, b;
+    IN a, b;
     OUT out;
 
-    BUILTIN And;
+
+    PARTS:
+    Nand(a=a,b=b,out=nandout);
+    Not(in=nandout,out=out);
 }
